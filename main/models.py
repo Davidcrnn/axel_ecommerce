@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+from django.urls import reverse
 # Create your models here.
 
 
@@ -24,3 +26,26 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_add_to_cart_url(self):
+        return reverse('add-to-cart', kwargs={'slug': self.slug})
+
+
+class OrderProduct(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    ordered = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.product.name
+
+
+class Order(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL,
+                             on_delete=models.CASCADE)
+    products = models.ManyToManyField(OrderProduct)
+    ordered = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Commande de {self.user.username}"
