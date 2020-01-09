@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="section-title">
+        <div class="arrow">
+            <a href="{{request.META.HTTP_REFERER}}">
+                <img src="{% static '../static/images/arrowback-05.svg' %}" alt="back">
+                <span>back</span>
+            </a>
+        </div>
+        <div class="product-title">
+            <h1>CRÉATIONS</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for product in products  %}
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <a href="{% url 'product-detail' product.slug %}">
+                <div class="photo-container">
+                    <img src=" {{ product.image1.url }}" alt="{{ product.name}}">
+                </div>
+
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
