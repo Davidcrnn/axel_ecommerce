@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <div class="section-title">
+        <div class="arrow">
+            <a href="{{request.META.HTTP_REFERER}}">
+                <img src="{% static '../static/images/arrowback-05.svg' %}" alt="back">
+                <span>back</span>
+            </a>
+        </div>
+        <div class="product-title">
+            <h1>{{ product.name }}</h1>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-sm-12 col-md-8 bg-product-detail">
+            <div class="bg-image-product">
+
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url({{product.image1.url}})"></div>
+
+                        {% if product.image2 %}
+                        <div class="swiper-slide" style="background-image:url({{product.image2.url}})"></div>
+
+                        {% endif %}
+
+                        {% if product.image3 %}
+
+                        <div class="swiper-slide" style="background-image:url({{product.image3.url}})"></div>
+                        {% endif %}
+
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next swiper-button-white"></div>
+                    <div class="swiper-button-prev swiper-button-white"></div>
+                </div>
+                <div class="swiper-container gallery-thumbs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide" style="background-image:url({{product.image1.url}})"></div>
+                        {% if product.image2 %}
+                        <div class="swiper-slide" style="background-image:url({{product.image2.url}})"></div>
+
+                        {% endif %}
+
+                        {% if product.image3 %}
+
+                        <div class="swiper-slide" style="background-image:url({{product.image3.url}})"></div>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+        <div class="col-sm-12 col-md-4 bg-product-detail">
+            <div class="product-detail-description">
+                <h1>{{ product.name }}</h1> <br>
+                <p>Descriptif</p>
+                <p>{{ product.description }}</p>
+                <p>Couleur : {{ product.color }}</p>
+                <p>Taille : {{ product.size }}</p>
+                <p>Prix : {{ product.price }}€</p>
+                <a href="">Commander</a>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+<script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+        spaceBetween: 10,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesVisibility: true,
+        watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        thumbs: {
+            swiper: galleryThumbs
+        }
+    });
+</script>
+{% endblock content %}

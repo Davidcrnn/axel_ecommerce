@@ -1,0 +1,18 @@
+{% load static %}
+<div class="nav-container">
+    <div class="nav-hamburger">
+        <img src="{% static '../static/images/hamburger-02.svg' %}" alt="overlay">
+        <a href="{% url 'products' %}"> Products</a>
+    </div>
+    <div class="nav-logo">
+        <a href="{% url 'home' %}">
+            <h3>VÉDITEX.</h3>
+        </a>
+
+    </div>
+
+    <div class="nav-connect">
+        <img src="{% static '../static/images/cart.svg' %} " alt="cart">
+        <img src="{% static '../static/images/user.svg' %}" alt="connect">
+    </div>
+</div>
