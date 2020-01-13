@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'allauth',  # new
     'allauth.account',  # new
     'allauth.socialaccount',
+    'django_countries',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +150,7 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = 'home'
+
+
+STRIPE_PUBLIC_KEY = config('STRIPE_LIVE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = config('STRIPE_LIVE_SECRET_KEY')
