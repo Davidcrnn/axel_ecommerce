@@ -28,7 +28,7 @@
                     <td>{{ order_product.product.price }}€</td>
                     <td>{{ order_product.get_total_product_price}}€ <a style='color: #165361;'
                             href="{% url 'remove-from-cart' order_product.product.slug %}">
-                            <img src="{% static '../static/images/trash.svg' %}" alt="connect" class="icon-small">
+                            <img src="{% static '../static/main/images/trash.svg' %}" alt="connect" class="icon-small">
                         </a>
 
                 </tr>
