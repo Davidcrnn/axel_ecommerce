@@ -12,7 +12,9 @@
     </div>
 
     <div class="nav-connect">
-        <img src="{% static '../static/images/cart.svg' %} " alt="cart">
+        <a href="{% url 'order-summary' %} ">
+            <img src="{% static '../static/images/cart.svg' %} " alt="cart">
+        </a>
         <img src="{% static '../static/images/user.svg' %}" alt="connect">
     </div>
 </div>
