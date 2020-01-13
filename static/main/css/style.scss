@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'navbar';
+@import 'components';
+@import 'products';
+@import 'product';
+@import 'footer';
+
+body {
+    background-color: $bg-color;
+    
+}
+
+h1, h2, h3, p, span, li, ul, td, th {
+    color: $font-color;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 30px;
+}

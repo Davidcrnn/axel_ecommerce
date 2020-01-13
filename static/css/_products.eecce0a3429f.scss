@@ -1,0 +1,23 @@
+// Products List style
+
+// Section arrow back (left)
+
+.arrow img {
+    height: 50px;
+    width: 50px;
+}
+
+
+// Products Grid
+
+.photo-container {
+    margin-bottom: 20px;
+    img {
+        height: auto;
+        width: 100%;
+        object-fit: cover;
+    } &:hover {
+        opacity: 0.5;
+    }
+}
+

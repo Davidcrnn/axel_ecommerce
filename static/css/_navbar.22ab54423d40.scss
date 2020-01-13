@@ -1,0 +1,28 @@
+// Navbar Style
+
+// Nav container
+
+.nav-container {
+    height: 130px;
+    padding: 0 40px;
+    background-color: $bg-gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+// Nav section hamburger (left)
+
+.nav-hamburger img {
+    height: 50px;
+    width: 50px;
+}
+
+
+// Nav section icon (right)
+
+.nav-connect img {
+    height: 50px;
+    width: 50px;
+}

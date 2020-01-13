@@ -1,0 +1,24 @@
+// Footer style
+
+.footer-container {
+    height: 300px;
+    background-color: $bg-gray;
+    margin-top: 30px;
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-social {
+    display: flex;
+    img {
+        height: 50px;
+        width: 50px;
+        margin: 0 20px;
+    }
+}
+
+.footer-logo {
+    transform: rotate(270deg);
+}
